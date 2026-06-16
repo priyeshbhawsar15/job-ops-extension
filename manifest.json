@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "JobOps Clipper",
+  "version": "0.1.0",
+  "description": "Extract job postings from the current page and import them into JobOps manual pipeline.",
+  "permissions": ["activeTab", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Save to JobOps",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["lib/settings.js", "lib/extractor.js", "content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JobOps Clipper</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="popup">
+    <header class="topbar">
+      <div class="brand">
+        <strong>JobOps Clipper</strong>
+        <span class="muted" id="page-host">Current page</span>
+      </div>
+      <button id="open-options" class="secondary" type="button">Options</button>
+    </header>
+    <main class="content">
+      <div id="status" class="status">Reading current tab...</div>
+
+      <section id="auth-panel" class="panel hidden">
+        <strong>Sign in required</strong>
+        <p class="muted">Open options, sign in to JobOps, then return to this page.</p>
+        <button id="open-options-auth" type="button">Open options</button>
+      </section>
+
+      <section id="domain-panel" class="panel hidden">
+        <div class="grid">
+          <label>
+            Domain mode
+            <select id="domain-mode">
+              <option value="default">Default</option>
+              <option value="autoprompt">Auto-prompt</option>
+              <option value="autoimport">Auto-import</option>
+            </select>
+          </label>
+          <label class="check">
+            <input id="domain-tailor" type="checkbox">
+            <span>Tailor automatically</span>
+          </label>
+        </div>
+      </section>
+
+      <section id="review-panel" class="panel hidden">
+        <div class="row between">
+          <strong>Review job</strong>
+          <span class="muted" id="confidence"></span>
+        </div>
+        <div class="grid" id="fields"></div>
+        <label class="check" style="margin-top: 10px;">
+          <input id="tailor" type="checkbox" checked>
+          <span>Tailor and score automatically after import</span>
+        </label>
+        <div class="actions">
+          <button id="import" type="button">Import</button>
+          <button id="show-overlay" class="secondary" type="button">Open overlay</button>
+          <button id="retry-infer" class="secondary" type="button">Run inference again</button>
+        </div>
+      </section>
+    </main>
+    <script src="lib/settings.js"></script>
+    <script src="lib/extractor.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

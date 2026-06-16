@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JobOps Clipper Options</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <strong>JobOps Clipper Options</strong>
+          <span class="muted">Configure JobOps auth and per-domain behavior</span>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2>Connection</h2>
+        <div id="status" class="status">Loading settings...</div>
+        <div class="grid" style="margin-top: 12px;">
+          <label class="wide">
+            Base URL
+            <input id="base-url" placeholder="http://192.168.2.201:3005">
+          </label>
+          <label>
+            Username
+            <input id="username" autocomplete="username">
+          </label>
+          <label>
+            Password
+            <input id="password" type="password" autocomplete="current-password">
+          </label>
+        </div>
+        <div class="actions">
+          <button id="sign-in" type="button">Sign in</button>
+          <button id="test-auth" class="secondary" type="button">Test token</button>
+          <button id="sign-out" class="danger" type="button">Sign out</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Defaults</h2>
+        <div class="grid">
+          <label>
+            Default domain mode
+            <select id="default-mode">
+              <option value="default">Default</option>
+              <option value="autoprompt">Auto-prompt</option>
+              <option value="autoimport">Auto-import</option>
+            </select>
+          </label>
+          <label class="check">
+            <input id="default-tailor" type="checkbox">
+            <span>Tailor automatically after import</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Domain Rules</h2>
+        <div class="grid">
+          <label>
+            Hostname
+            <input id="domain-host" placeholder="boards.greenhouse.io">
+          </label>
+          <label>
+            Mode
+            <select id="domain-mode">
+              <option value="default">Default</option>
+              <option value="autoprompt">Auto-prompt</option>
+              <option value="autoimport">Auto-import</option>
+            </select>
+          </label>
+          <label class="check">
+            <input id="domain-tailor" type="checkbox" checked>
+            <span>Tailor automatically</span>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="add-domain" type="button">Save domain rule</button>
+        </div>
+        <table class="domain-table">
+          <thead>
+            <tr>
+              <th>Hostname</th>
+              <th>Mode</th>
+              <th>Tailor</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="domain-rules"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="lib/settings.js"></script>
+    <script src="lib/api.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
