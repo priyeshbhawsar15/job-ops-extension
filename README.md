@@ -17,14 +17,14 @@ Chrome Manifest V3 extension for saving job pages into a self-hosted JobOps inst
 1. Open `chrome://extensions`.
 2. Enable `Developer mode`.
 3. Click `Load unpacked`.
-4. Select this folder: `C:\Users\priyesh\Code\job-ops-extension`.
+4. Select this folder.
 
 ## Setup
 
 1. Click the extension icon.
 2. Open `Options`.
 3. Enter the base URL of your JobOps instance, for example `http://localhost:3005`.
-4. Enter username `priyesh`.
+4. Enter your JobOps username.
 5. Enter the JobOps password and click `Sign in`.
 
 The extension stores the returned JobOps bearer token in `chrome.storage.local`. It does not store the password.
