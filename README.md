@@ -23,7 +23,7 @@ Chrome Manifest V3 extension for saving job pages into a self-hosted JobOps inst
 
 1. Click the extension icon.
 2. Open `Options`.
-3. Confirm the base URL is `http://192.168.2.201:3005`.
+3. Enter the base URL of your JobOps instance, for example `http://localhost:3005`.
 4. Enter username `priyesh`.
 5. Enter the JobOps password and click `Sign in`.
 
